@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>lessonAddIcon.png</file>
+        <file>groupAddIcon.png</file>
+        <file>studenAddIcon.png</file>
+        <file>studentAddIconALternative.png</file>
+        <file>addMarkIcon.png</file>
+        <file>filterIcon.png</file>
+    </qresource>
+</RCC>
