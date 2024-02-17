@@ -1,9 +1,9 @@
-#include "lessondialog.hpp"
+#include "../include/lessondialog.hpp"
 
 #include <QGridLayout>
 #include <QPushButton>
 #include <QLabel>
-#include "lessonvalidator.hpp"
+#include "../include/lessonvalidator.hpp"
 
 lessonDialog::lessonDialog(QWidget *parent)
     : QDialog(parent)

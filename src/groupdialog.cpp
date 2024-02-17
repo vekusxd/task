@@ -1,4 +1,4 @@
-#include "groupdialog.hpp"
+#include "../include/groupdialog.hpp"
 #include <QGridLayout>
 #include <QLabel>
 #include <QPushButton>

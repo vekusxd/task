@@ -1,4 +1,4 @@
-#include "markdialog.hpp"
+#include "../include/markdialog.hpp"
 
 #include <QGridLayout>
 #include <QLabel>

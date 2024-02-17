@@ -1,4 +1,4 @@
-#include "lessonvalidator.hpp"
+#include "../include/lessonvalidator.hpp"
 #include <QRegularExpression>
 
 lessonValidator::lessonValidator(QObject *parent)

@@ -1,4 +1,4 @@
-#include "namevalidatior.hpp"
+#include "../include/namevalidatior.hpp"
 #include <QRegularExpression>
 
 nameValidatior::nameValidatior(QObject *parent)

@@ -1,4 +1,4 @@
-#include "groupselectiondialog.hpp"
+#include "../include/groupselectiondialog.hpp"
 #include <QPushButton>
 #include <QGridLayout>
 #include <QLabel>

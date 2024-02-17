@@ -11,18 +11,32 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Core Gui Widgets Sql)
 
-add_executable(task
-  main.cpp
-  database.hpp database.cpp
-  lessondialog.hpp lessondialog.cpp
-  window.hpp window.cpp
-  icons.qrc
-  groupdialog.hpp groupdialog.cpp
-  lessonvalidator.hpp lessonvalidator.cpp
-  studentdialog.hpp studentdialog.cpp
-  namevalidatior.hpp namevalidatior.cpp
-  markdialog.hpp markdialog.cpp
-  groupselectiondialog.hpp groupselectiondialog.cpp
+set(HEADERS
+  include/database.hpp
+  include/lessondialog.hpp 
+  include/window.hpp
+  resources/icons.qrc
+  include/groupdialog.hpp
+  include/lessonvalidator.hpp
+  include/studentdialog.hpp
+  include/namevalidatior.hpp
+  include/markdialog.hpp
+  include/groupselectiondialog.hpp
 )
+
+set(SOURCES
+  src/main.cpp
+  src/database.cpp
+  src/lessondialog.cpp
+  src/window.cpp
+  src/groupdialog.cpp
+  src/lessonvalidator.cpp
+  src/studentdialog.cpp
+  src/namevalidatior.cpp
+  src/markdialog.cpp
+  src/groupselectiondialog.cpp
+)
+
+add_executable(task ${HEADERS} ${SOURCES})
 target_link_libraries(task Qt6::Core Qt6::Gui Qt6::Widgets Qt6::Sql)
 

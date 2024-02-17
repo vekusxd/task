@@ -1,10 +1,12 @@
-#include "database.hpp"
+#include "../include/database.hpp"
 
 
 DataBase::DataBase(QObject *parent)
     : QObject{parent}
 {
     db = QSqlDatabase::addDatabase("QSQLITE");
+
+    //хз в чем проблема с путем к бдшке, лучше абсолютный путь указать
     db.setDatabaseName("../marks.db");
     bool ok = db.open();
 }

@@ -1,4 +1,4 @@
-#include "studentdialog.hpp"
+#include "../include/studentdialog.hpp"
 
 #include <QGridLayout>
 #include <QLabel>

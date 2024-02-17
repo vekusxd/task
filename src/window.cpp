@@ -1,4 +1,4 @@
-#include "window.hpp"
+#include "../include/window.hpp"
 
 #include <QToolBar>
 #include <QPixmap>
@@ -39,7 +39,7 @@ window::window(QWidget *parent)
     model->setRelation(1, QSqlRelation("lessons", "id", "title"));
     model->setRelation(2, QSqlRelation("students", "id", "initials"));
     model->setEditStrategy(QSqlRelationalTableModel::OnFieldChange);
-    onSelectGroupDialogAccepted();
+ //   onSelectGroupDialogAccepted();
     model->select();
 
     view = new QTableView;
@@ -83,8 +83,8 @@ void window::updateModel()
     view->resizeColumnsToContents();
     view->setColumnWidth(0, 0);
     onSelectGroupDialogAccepted();
-    studentDialog->updateAll();
-    markDialog->updateAll();
+    // studentDialog->updateAll();
+    // markDialog->updateAll();
     view->setItemDelegate(new QSqlRelationalDelegate(view->model()));
 }
 
@@ -96,8 +96,8 @@ void window::onStudentDialogAccepted()
     int id = studentDialog->getId();
     db->insertStudent(studentDialog->getInitials(), id);
     studentDialog->clear();
-    studentDialog->updateAll();
-    markDialog->updateAll();
+    // studentDialog->updateAll();
+    // markDialog->updateAll();
     updateModel();
 }
 
@@ -108,8 +108,8 @@ void window::onLessonDialogAccepted()
     }
     db->insertLesson(lessonDialog->getLesson());
     lessonDialog->clear();
-    studentDialog->updateAll();
-    markDialog->updateAll();
+    // studentDialog->updateAll();
+    // markDialog->updateAll();
     updateModel();
 
 }
@@ -121,8 +121,8 @@ void window::onGroupDialogAccepted()
     }
     db->insertGroup(groupDialog->getGroup());
     groupDialog->clear();
-    studentDialog->updateAll();
-    markDialog->updateAll();
+    // studentDialog->updateAll();
+    // markDialog->updateAll();
     updateModel();
 
 }
@@ -134,8 +134,8 @@ void window::onMarkDialogAccepted()
     }
     db->insertMark(markDialog->getLessonId(), markDialog->getStudentid(), markDialog->getDate(), markDialog->getMark(), markDialog->getTheme());
     markDialog->clear();
-    studentDialog->updateAll();
-    markDialog->updateAll();
+    // studentDialog->updateAll();
+    // markDialog->updateAll();
     updateModel();
 
 }
@@ -144,8 +144,8 @@ void window::onSelectGroupDialogAccepted()
 {
     QString filter = QString("marks.student_id in %1").arg(db->getAllStudentsInGroup(selectDialog->getGroupId()));
     model->setFilter(filter);
-    studentDialog->updateAll();
-    markDialog->updateAll();
+    // studentDialog->updateAll();
+    // markDialog->updateAll();
     selectedGroup->setText(selectDialog->getGroupName());
 }
 
