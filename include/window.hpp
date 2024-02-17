@@ -24,9 +24,9 @@ private:
    DataBase *db;
 
 
-   lessonDialog *lessonDialog;
+   LessonDialog *lessonDialog;
    GroupDialog *groupDialog;
-   studentDialog *studentDialog;
+   StudentDialog *studentDialog;
    MarkDialog *markDialog;
    GroupSelectionDialog *selectDialog;
 

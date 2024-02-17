@@ -4,11 +4,11 @@
 #include <QObject>
 #include <QLineEdit>
 
-class lessonDialog : public QDialog
+class LessonDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit lessonDialog(QWidget *parent = nullptr);
+    explicit LessonDialog(QWidget *parent = nullptr);
 
 private:
     QLineEdit *lessonEdit;

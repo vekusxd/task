@@ -5,7 +5,7 @@
 #include <QLabel>
 #include "../include/lessonvalidator.hpp"
 
-lessonDialog::lessonDialog(QWidget *parent)
+LessonDialog::LessonDialog(QWidget *parent)
     : QDialog(parent)
 {
     QGridLayout *layout = new QGridLayout(this);
@@ -16,7 +16,7 @@ lessonDialog::lessonDialog(QWidget *parent)
 
     QLabel *lessonName = new QLabel("Название предмета:");
     lessonEdit = new QLineEdit;
-    lessonEdit->setValidator(new lessonValidator);
+    lessonEdit->setValidator(new LessonValidator);
     lessonEdit->setPlaceholderText("Предмет");
 
     QPushButton *ok = new QPushButton("&Ok");
@@ -31,12 +31,12 @@ lessonDialog::lessonDialog(QWidget *parent)
     connect(cancel, &QPushButton::clicked,this, &QDialog::reject);
 }
 
-QString lessonDialog::getLesson() const
+QString LessonDialog::getLesson() const
 {
     return lessonEdit->text();
 }
 
-void lessonDialog::clear()
+void LessonDialog::clear()
 {
     lessonEdit->clear();
 }

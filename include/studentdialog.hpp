@@ -9,11 +9,11 @@
 #include "namevalidatior.hpp"
 #include "database.hpp"
 
-class studentDialog : public QDialog
+class StudentDialog : public QDialog
 {
     Q_OBJECT
 public:
-    explicit studentDialog(QWidget *parent = nullptr);
+    explicit StudentDialog(QWidget *parent = nullptr);
 
 
     QPair<QStringList, QList<int>> groups;

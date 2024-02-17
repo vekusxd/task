@@ -3,11 +3,11 @@
 #include <QObject>
 #include <QValidator>
 
-class lessonValidator : public QValidator
+class LessonValidator : public QValidator
 {
     Q_OBJECT
 public:
-    explicit lessonValidator(QObject *parent = nullptr);
+    explicit LessonValidator(QObject *parent = nullptr);
 
     // QValidator interface
 public:

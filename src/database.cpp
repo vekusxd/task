@@ -126,7 +126,7 @@ QString DataBase::getAllStudentsInGroup(int id) const
     if(result.size() < 2){
         return  "";
     }
-    result.removeLast();
+    result.remove(1,1);
     result += ")";
     return result;
 }

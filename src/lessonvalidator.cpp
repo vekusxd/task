@@ -1,11 +1,11 @@
 #include "../include/lessonvalidator.hpp"
 #include <QRegularExpression>
 
-lessonValidator::lessonValidator(QObject *parent)
+LessonValidator::LessonValidator(QObject *parent)
     : QValidator{parent}
 {}
 
-QValidator::State lessonValidator::validate(QString &str, int &) const
+QValidator::State LessonValidator::validate(QString &str, int &) const
 {
     QRegularExpression rxp = QRegularExpression("[A-Za-z]");
     if(str.contains(rxp)){

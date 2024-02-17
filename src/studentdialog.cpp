@@ -4,7 +4,7 @@
 #include <QLabel>
 #include <QPushButton>
 
-studentDialog::studentDialog(QWidget *parent)
+StudentDialog::StudentDialog(QWidget *parent)
     : QDialog(parent)
 {
     db = new DataBase;
@@ -42,23 +42,23 @@ studentDialog::studentDialog(QWidget *parent)
     connect(cancel, &QPushButton::clicked,this, &QDialog::reject);
 }
 
-QString studentDialog::getInitials() const
+QString StudentDialog::getInitials() const
 {
     return initialsEdit->text();
 }
 
-int studentDialog::getId() const
+int StudentDialog::getId() const
 {
     int index = groupsBox->currentIndex();
     return groups.second.at(index);
 }
 
-void studentDialog::clear()
+void StudentDialog::clear()
 {
     initialsEdit->clear();
 }
 
-void studentDialog::updateAll()
+void StudentDialog::updateAll()
 {
     groups = db->getAllGroups();
 }

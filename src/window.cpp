@@ -9,9 +9,9 @@ window::window(QWidget *parent)
     : QMainWindow{parent}
 {
     db = new DataBase;
-    lessonDialog = new class lessonDialog;
+    lessonDialog = new LessonDialog;
     groupDialog = new GroupDialog;
-    this->studentDialog = new class studentDialog;
+    this->studentDialog = new StudentDialog;
     markDialog = new MarkDialog;
     selectDialog = new GroupSelectionDialog;
 
@@ -52,17 +52,17 @@ window::window(QWidget *parent)
     layout->addWidget(view);
 
     QToolBar *toolBar = new QToolBar("Test");
-    toolBar->addAction(QPixmap(":/lessonAddIcon.png"), "Добавить предмет", lessonDialog, &lessonDialog::exec);
+    toolBar->addAction(QPixmap(":/lessonAddIcon.png"), "Добавить предмет", lessonDialog, &LessonDialog::exec);
     toolBar->addAction(QPixmap(":/groupAddIcon.png"), "Добавить группу", groupDialog, &GroupDialog::exec);
-    toolBar->addAction(QPixmap(":/studenAddIcon.png"),"Добавить студента", studentDialog, &studentDialog::exec);
+    toolBar->addAction(QPixmap(":/studenAddIcon.png"),"Добавить студента", studentDialog, &StudentDialog::exec);
     toolBar->addAction(QPixmap(":/addMarkIcon.png"), "Добавить оценку", markDialog, &MarkDialog::exec);
     toolBar->addAction(QPixmap(":/filterIcon.png"), "Выбрать группу", selectDialog, &GroupSelectionDialog::exec);
 
     addToolBar(Qt::TopToolBarArea, toolBar);
 
-    connect(lessonDialog, &lessonDialog::accepted, this, &window::onLessonDialogAccepted);
+    connect(lessonDialog, &LessonDialog::accepted, this, &window::onLessonDialogAccepted);
     connect(groupDialog, &GroupDialog::accepted, this, &window::onGroupDialogAccepted);
-    connect(studentDialog, &studentDialog::accepted, this, &window::onStudentDialogAccepted);
+    connect(studentDialog, &StudentDialog::accepted, this, &window::onStudentDialogAccepted);
     connect(markDialog, &MarkDialog::accepted, this, &window::onMarkDialogAccepted);
     connect(selectDialog, &GroupSelectionDialog::accepted, this, &window::onSelectGroupDialogAccepted);
 }
